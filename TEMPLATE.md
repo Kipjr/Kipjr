@@ -57,12 +57,6 @@
 
 ![](./snippet.svg)
 
-### Stack Overflow
-
-<a href="https://stackoverflow.com/users/{{ plugins.stackoverflow.user.id }}">
-<img src="./stackoverflow.svg">
-</a>
-
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <h6 align="right"><em>
