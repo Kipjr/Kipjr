@@ -187,7 +187,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -211,7 +211,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -240,7 +240,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -266,7 +266,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -301,7 +301,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -335,7 +335,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -365,7 +365,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -376,8 +376,8 @@ jobs:
           # Output info
           base: ""
 
-          plugin_stackoverflow: true
-          plugin_stackoverflow_user: 5037965
+          plugin_stackoverflow: false
+          plugin_stackoverflow_user: 0
           plugin_stackoverflow_sections: answers-top, answers-recent
           plugin_stackoverflow_limit: 4
           plugin_stackoverflow_lines: 4
@@ -391,7 +391,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -433,7 +433,7 @@ jobs:
           base_indepth: true
           repositories_skipped: kipjr/kipjr.github.io
 
-          config_timezone: Australia/Perth
+          config_timezone: Europe/Amsterdam
           plugin_followup: true
           plugin_followup_sections: repositories
           plugin_habits: true
@@ -461,8 +461,8 @@ jobs:
           plugin_notable_from: all
           plugin_notable_filter: stars:>50
           plugin_notable_indepth: true
-          plugin_stackoverflow: true
-          plugin_stackoverflow_user: 5037965
+          plugin_stackoverflow: false
+          plugin_stackoverflow_user: 0
           plugin_stackoverflow_sections: questions-top, answers-top, answers-recent
           plugin_stackoverflow_limit: 2
           plugin_stackoverflow_lines: 2
@@ -471,7 +471,7 @@ jobs:
           plugin_code_load: 100
           plugin_code_visibility: public
           plugin_code_skipped: kipjr/kipjr, kipjr/kipjr.github.io
-          query: '{"superuser_id": 675050}'
+          query: '{"superuser_id": 0}'
 
   metrics:
     name: Generate readme metrics
@@ -483,7 +483,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
 
           output_action: skip-if-only-metadata-changed
-          config_timezone: Australia/Perth
+          config_timezone: Europe/Amsterdam
 
           user: kipjr
           template: classic
@@ -520,7 +520,7 @@ jobs:
           plugin_notable_filter: stars:>50
           plugin_notable_indepth: true
           plugin_stackoverflow: true
-          plugin_stackoverflow_user: 5037965
+          plugin_stackoverflow_user: 0
           plugin_stackoverflow_sections: questions-top, answers-top, answers-recent
           plugin_stackoverflow_limit: 2
           plugin_stackoverflow_lines: 2
@@ -559,7 +559,7 @@ jobs:
           output_action: skip-if-only-metadata-changed
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Input file
           markdown: https://raw.githubusercontent.com/kipjr/kipjr/main/TEMPLATE.md
@@ -571,10 +571,10 @@ jobs:
 
           repositories_skipped: kipjr/kipjr.github.io
 
-          plugin_stackoverflow: true
-          plugin_stackoverflow_user: 5037965
+          plugin_stackoverflow: false
+          plugin_stackoverflow_user: 0
           plugin_stackoverflow_sections: questions-top, answers-top, answers-recent
           plugin_stackoverflow_limit: 3
           plugin_stackoverflow_lines: 0
 
-          query: '{"superuser_id": 675050}'
+          query: '{"superuser_id": 0}'
