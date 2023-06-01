@@ -53,7 +53,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           config_display: large
           filename: stargazers.svg
@@ -73,7 +73,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           config_display: large
           filename: lines.svg
@@ -96,7 +96,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -107,19 +107,13 @@ jobs:
           repositories_batch: 5
           repositories_forks: true
           repositories_affiliations: owner, collaborator, organization_member
-          debug: true  # Investigate why @wikimedia/pywikibot is missing
+          debug: false  
 
           # Output info
           base: ""
           base_indepth: true
           repositories_skipped: |
-            kipjr/kipjr.github.io
-            kipjr/wyam-test
-            kipjr/pywikibot-osx-wheels
-            kipjr/pe-id-en
-            kipjr/emplace-data
-            kipjr/my-ci-test
-            franklin-ai/*
+            kipjr/kipjr
           plugin_notable: true
           plugin_notable_repositories: true
           plugin_notable_from: all
@@ -136,7 +130,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -147,7 +141,7 @@ jobs:
           # Output info
           base: ""
           base_indepth: true
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_habits: true
           plugin_habits_days: 14
@@ -163,7 +157,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: main
           committer_message: Update ${filename} - [GitHub Action]
-          config_timezone: Etc/UTC
+          config_timezone: Europe/Amsterdam
 
           # Output file
           template: classic
@@ -173,7 +167,7 @@ jobs:
           # Output info
           base: ""
           base_indepth: true
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_isocalendar: true
           plugin_isocalendar_duration: half-year
@@ -197,7 +191,7 @@ jobs:
           # Output info
           base: ""
           base_indepth: true
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_calendar: true
           plugin_calendar_limit: 4
@@ -221,15 +215,15 @@ jobs:
 
           # Output info
           base: ""
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_code: true
           plugin_code_days: 7
           plugin_code_lines: 12
           plugin_code_load: 1000
           plugin_code_visibility: public
-          plugin_code_languages: python, javascript, typescript, cmake, c, dockerfile, java
-          plugin_code_skipped: kipjr/kipjr, kipjr/kipjr.github.io
+          plugin_code_languages: python, javascript, powershell, dockerfile, php
+          plugin_code_skipped: kipjr/kipjr
 
       - name: Update followup.svg
         if: always()
@@ -251,7 +245,7 @@ jobs:
           # Output info
           base: ""
           base_indepth: true
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_followup: true
           plugin_followup_sections: repositories
@@ -277,7 +271,7 @@ jobs:
           # Output info
           base: ""
           base_indepth: true
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_languages: true  # Show language bar
           plugin_languages_sections: most-used
@@ -312,7 +306,7 @@ jobs:
           # Output info
           base: ""
           base_indepth: true
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_languages: true  # Show language bar
           plugin_languages_sections: recently-used
@@ -346,7 +340,7 @@ jobs:
           # Output info
           base: ""
           base_indepth: true
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_achievements: true  # Show achievements
           plugin_achievements_threshold: C  # Show all unlocked achievements
@@ -402,7 +396,7 @@ jobs:
           # Output info
           base: ""
           base_indepth: true
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_reactions: true
           plugin_reactions_display: absolute  # Or 'relative'
@@ -431,7 +425,7 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           base_indepth: true
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           config_timezone: Europe/Amsterdam
           plugin_followup: true
@@ -519,7 +513,7 @@ jobs:
           plugin_notable_from: all
           plugin_notable_filter: stars:>50
           plugin_notable_indepth: true
-          plugin_stackoverflow: true
+          plugin_stackoverflow: false
           plugin_stackoverflow_user: 0
           plugin_stackoverflow_sections: questions-top, answers-top, answers-recent
           plugin_stackoverflow_limit: 2
@@ -569,7 +563,7 @@ jobs:
           filename: README.md
           config_output: markdown
 
-          repositories_skipped: kipjr/kipjr.github.io
+          repositories_skipped: kipjr/kipjr
 
           plugin_stackoverflow: false
           plugin_stackoverflow_user: 0
