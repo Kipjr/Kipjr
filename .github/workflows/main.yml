@@ -1,0 +1,580 @@
+---
+name: Metrics
+"on":
+  # Schedule updates (each hour)
+  schedule: [{cron: "0 1 * * *"}]
+  # Lines below let you run workflow manually and on each commit (optional)
+  workflow_dispatch:
+  push: {branches: ["master", "main"]}
+
+concurrency:  # Queue workflows rather than overlap them
+  group: metrics
+
+jobs:
+  resources:
+    name: Generate SVG resources
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update stats.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: stats.svg
+          config_output: svg
+
+          # Output info
+          # Which stats to show
+          base: "header, activity, community, repositories"
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+          plugin_lines: true  # Include total added & removed lines
+          # Because of GitHub REST API limitation, provided token requires
+          # full repo scope to access traffic information.
+          # plugin_traffic: true  # Views in the last 2 weeks
+          extras_css: |  # Make it prettier
+            * { font-size: 15px; }
+            h2 { margin: 2px 5px 6px !important; }
+
+      - name: Update stargazers.svg
+        if: ${{ false }}
+        uses: lowlighter/metrics@main
+        with:
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          config_display: large
+          filename: stargazers.svg
+          config_output: svg
+
+          base: ""
+
+          plugin_stargazers: true
+          plugin_stargazers_charts: true
+          plugin_stargazers_charts_type: chartist
+
+      - name: Update lines.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          config_display: large
+          filename: lines.svg
+          config_output: svg
+
+          base: ""
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_lines: true
+          plugin_lines_sections: base, repositories, history
+          plugin_lines_repositories_limit: 10
+          plugin_lines_skipped: kipjr/kipjr.github.io
+
+      - name: Update notable.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: notable.svg
+          config_output: svg
+          plugins_errors_fatal: true
+          repositories_batch: 5
+          repositories_forks: true
+          repositories_affiliations: owner, collaborator, organization_member
+          debug: true  # Investigate why @wikimedia/pywikibot is missing
+
+          # Output info
+          base: ""
+          base_indepth: true
+          repositories_skipped: |
+            kipjr/kipjr.github.io
+            kipjr/wyam-test
+            kipjr/pywikibot-osx-wheels
+            kipjr/pe-id-en
+            kipjr/emplace-data
+            kipjr/my-ci-test
+            franklin-ai/*
+          plugin_notable: true
+          plugin_notable_repositories: true
+          plugin_notable_from: all
+          plugin_notable_filter: stars:>50
+          plugin_notable_indepth: true
+          plugin_notable_types: commit, issue, pull_request
+
+      - name: Update habits.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: habits.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_habits: true
+          plugin_habits_days: 14
+          plugin_habits_facts: true
+          plugin_habits_from: 200
+
+      - name: Update isocalendar.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          filename: isocalendar.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_isocalendar: true
+          plugin_isocalendar_duration: half-year
+
+      - name: Update calendar.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          filename: calendar.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_calendar: true
+          plugin_calendar_limit: 4
+
+      - name: Update snippet.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: snippet.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_code: true
+          plugin_code_days: 7
+          plugin_code_lines: 12
+          plugin_code_load: 1000
+          plugin_code_visibility: public
+          plugin_code_languages: python, javascript, typescript, cmake, c, dockerfile, java
+          plugin_code_skipped: kipjr/kipjr, kipjr/kipjr.github.io
+
+      - name: Update followup.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: followup.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_followup: true
+          plugin_followup_sections: repositories
+          plugin_followup_indepth: true
+
+      - name: Update languages.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: languages.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_languages: true  # Show language bar
+          plugin_languages_sections: most-used
+          plugin_languages_categories: data, markup, programming, prose  # All categories
+          plugin_languages_details: bytes-size, percentage  # Show percentages, with 2 decimals of precision
+          plugin_languages_limit: 8  # Max
+          plugin_languages_threshold: 0%  # Don't filter
+          extras_css: |  # Make it prettier
+            * { font-size: 16px; }
+            h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
+            .row { justify-content: center; }
+            .row section { flex: unset !important; width: 232px }
+            .field svg { margin: 0px 8px 0 -4px; }
+
+      - name: Update recent-languages.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: recent-languages.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_languages: true  # Show language bar
+          plugin_languages_sections: recently-used
+          plugin_languages_recent_categories: programming
+          plugin_languages_recent_days: 30
+          plugin_languages_recent_load: 300
+          extras_css: |  # Make it prettier
+            * { font-size: 16px; }
+            h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
+            .row { justify-content: center; }
+            .row section { flex: unset !important; width: 232px }
+            .field svg { margin: 0px 8px 0 -4px; }
+
+      - name: Update achievements.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: achievements.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_achievements: true  # Show achievements
+          plugin_achievements_threshold: C  # Show all unlocked achievements
+          plugin_achievements_secrets: true  # Include secret achievements
+          plugin_achievements_limit: 0  # All that can fit
+          plugin_achievements_display: compact  # Compact layout
+          extras_css: |  # Make it prettier
+            h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
+
+      - name: Update stackoverflow.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: stackoverflow.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+
+          plugin_stackoverflow: true
+          plugin_stackoverflow_user: 5037965
+          plugin_stackoverflow_sections: answers-top, answers-recent
+          plugin_stackoverflow_limit: 4
+          plugin_stackoverflow_lines: 4
+
+      - name: Update reactions.svg
+        if: always()
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Output file
+          template: classic
+          config_display: large
+          filename: reactions.svg
+          config_output: svg
+
+          # Output info
+          base: ""
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_reactions: true
+          plugin_reactions_display: absolute  # Or 'relative'
+          plugin_reactions_ignored: github-actions[bot], dependabot[bot], dependabot-preview[bot]
+          plugin_reactions_limit: 100
+          plugin_reactions_limit_issues: 100
+          plugin_reactions_limit_discussions: 200
+          plugin_reactions_limit_discussions_comments: 200
+          plugin_reactions_days: 30
+          plugin_reactions_details: count, percentage
+
+  json:
+    name: Generate JSON
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate JSON
+        uses: lowlighter/metrics@main
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          config_output: json
+          output_action: skip-if-only-metadata-changed
+          plugins_errors_fatal: true
+
+          user: kipjr
+          template: classic
+          base: header, activity, community, repositories, metadata
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          config_timezone: Australia/Perth
+          plugin_followup: true
+          plugin_followup_sections: repositories
+          plugin_habits: true
+          plugin_habits_days: 14
+          plugin_habits_facts: true
+          plugin_habits_from: 200
+          plugin_isocalendar: true
+          plugin_isocalendar_duration: half-year
+          plugin_languages: true
+          plugin_languages_categories: markup, programming, data, prose
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_colors: github
+          plugin_languages_limit: 20
+          plugin_languages_recent_categories: programming
+          plugin_languages_recent_days: 30
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_threshold: 0%
+          plugin_achievements: true
+          plugin_achievements_secrets: true
+          plugin_achievements_display: compact
+          plugin_lines: true
+          plugin_notable: true
+          plugin_notable_repositories: true
+          plugin_notable_from: all
+          plugin_notable_filter: stars:>50
+          plugin_notable_indepth: true
+          plugin_stackoverflow: true
+          plugin_stackoverflow_user: 5037965
+          plugin_stackoverflow_sections: questions-top, answers-top, answers-recent
+          plugin_stackoverflow_limit: 2
+          plugin_stackoverflow_lines: 2
+          plugin_code: true
+          plugin_code_lines: 12
+          plugin_code_load: 100
+          plugin_code_visibility: public
+          plugin_code_skipped: kipjr/kipjr, kipjr/kipjr.github.io
+          query: '{"superuser_id": 675050}'
+
+  metrics:
+    name: Generate readme metrics
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update github-metrics.svg
+        uses: lowlighter/metrics@main
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          output_action: skip-if-only-metadata-changed
+          config_timezone: Australia/Perth
+
+          user: kipjr
+          template: classic
+          base: header, activity, community, repositories, metadata
+          base_indepth: true
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_followup: true
+          plugin_followup_sections: repositories
+          plugin_habits: true
+          plugin_habits_days: 14
+          plugin_habits_facts: true
+          plugin_habits_from: 200
+          plugin_isocalendar: true
+          plugin_isocalendar_duration: half-year
+          plugin_languages: true
+          plugin_languages_indepth: true
+          plugin_languages_categories: markup, programming, data, prose
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_colors: github
+          plugin_languages_limit: 20
+          plugin_languages_recent_categories: programming
+          plugin_languages_recent_days: 30
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_threshold: 0%
+          plugin_achievements: true
+          plugin_achievements_secrets: true
+          plugin_achievements_display: compact
+          plugin_lines: true
+          plugin_notable: true
+          plugin_notable_repositories: true
+          plugin_notable_from: all
+          plugin_notable_filter: stars:>50
+          plugin_notable_indepth: true
+          plugin_stackoverflow: true
+          plugin_stackoverflow_user: 5037965
+          plugin_stackoverflow_sections: questions-top, answers-top, answers-recent
+          plugin_stackoverflow_limit: 2
+          plugin_stackoverflow_lines: 2
+          plugin_code: true
+          plugin_code_lines: 12
+          plugin_code_load: 100
+          plugin_code_visibility: public
+          plugin_code_skipped: kipjr/kipjr, kipjr/kipjr.github.io
+
+  insights:
+    name: Generate insights html
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update 'Insights' HTML
+        uses: lowlighter/metrics@main
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # Options
+          config_output: insights
+          output_action: skip-if-only-metadata-changed
+          user: kipjr
+          template: classic
+          repositories_skipped: kipjr/kipjr.github.io
+
+  readme-template:  # Use the template and generated resources to update the README
+    name: Generate README
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update README.md
+        uses: lowlighter/metrics@main
+        with:
+          # Common config
+          user: kipjr
+          token: ${{ secrets.METRICS_TOKEN }}
+          output_action: skip-if-only-metadata-changed
+          committer_branch: main
+          committer_message: Update ${filename} - [GitHub Action]
+          config_timezone: Etc/UTC
+
+          # Input file
+          markdown: https://raw.githubusercontent.com/kipjr/kipjr/main/TEMPLATE.md
+
+          # Output file
+          template: markdown
+          filename: README.md
+          config_output: markdown
+
+          repositories_skipped: kipjr/kipjr.github.io
+
+          plugin_stackoverflow: true
+          plugin_stackoverflow_user: 5037965
+          plugin_stackoverflow_sections: questions-top, answers-top, answers-recent
+          plugin_stackoverflow_limit: 3
+          plugin_stackoverflow_lines: 0
+
+          query: '{"superuser_id": 675050}'
