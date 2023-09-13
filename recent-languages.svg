@@ -20,20 +20,19 @@ h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
             </section>
             <section class="column">
                 <h3 class="field">Recently used languages</h3>
-                <small>estimation from 305kb of code in 350 edited files across 253 commits over last 29 days</small>
+                <small>estimation from 301kb of code in 321 edited files across 219 commits over last 23 days</small>
                 <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="920" height="8">
                     <mask id="languages-bar">
                         <rect x="0" y="0" width="920" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="367.91392040202675" height="8" fill="#f0c040"/>
-                    <rect mask="url(#languages-bar)" x="367.91392040202675" y="0" width="312.13572929596273" height="8" fill="#3572A5"/>
-                    <rect mask="url(#languages-bar)" x="680.0496496979896" y="0" width="124.66616614539515" height="8" fill="#878787"/>
-                    <rect mask="url(#languages-bar)" x="804.7158158433847" y="0" width="72.29297849141882" height="8" fill="#89e051"/>
-                    <rect mask="url(#languages-bar)" x="877.0087943348036" y="0" width="22.307805490894413" height="8" fill="#4F5D95"/>
-                    <rect mask="url(#languages-bar)" x="899.3165998256981" y="0" width="9.454871970934555" height="8" fill="#384d54"/>
-                    <rect mask="url(#languages-bar)" x="908.7714717966326" y="0" width="8.84745545297804" height="8" fill="#012456"/>
-                    <rect mask="url(#languages-bar)" x="917.6189272496107" y="0" width="2.381072750389539" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="367.4938197166114" height="8" fill="#f0c040"/>
+                    <rect mask="url(#languages-bar)" x="367.4938197166114" y="0" width="311.77931866144104" height="8" fill="#3572A5"/>
+                    <rect mask="url(#languages-bar)" x="679.2731383780524" y="0" width="127.86252637925838" height="8" fill="#878787"/>
+                    <rect mask="url(#languages-bar)" x="807.1356647573108" y="0" width="72.210431112451" height="8" fill="#89e051"/>
+                    <rect mask="url(#languages-bar)" x="879.3460958697618" y="0" width="22.372475128127828" height="8" fill="#4F5D95"/>
+                    <rect mask="url(#languages-bar)" x="901.7185709978897" y="0" width="9.444075972264095" height="8" fill="#384d54"/>
+                    <rect mask="url(#languages-bar)" x="911.1626469701538" y="0" width="8.837353029846247" height="8" fill="#012456"/>
                 </svg>
                 <div class="field center horizontal-wrap fill-width">
                     <div class="field center no-wrap language">
@@ -77,12 +76,6 @@ h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
                             <path fill="#012456" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                         </svg>
                         PowerShell
-                    </div>
-                    <div class="field center no-wrap language">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#f1e05a" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-                        </svg>
-                        JavaScript
                     </div>
                 </div>
             </section>
