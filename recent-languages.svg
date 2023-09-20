@@ -20,27 +20,19 @@ h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
             </section>
             <section class="column">
                 <h3 class="field">Recently used languages</h3>
-                <small>estimation from 308kb of code in 327 edited files across 225 commits over last 29 days</small>
+                <small>estimation from 169kb of code in 282 edited files across 187 commits over last 29 days</small>
                 <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="920" height="8">
                     <mask id="languages-bar">
                         <rect x="0" y="0" width="920" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="357.7427153301809" height="8" fill="#f0c040"/>
-                    <rect mask="url(#languages-bar)" x="357.7427153301809" y="0" width="303.5065463896725" height="8" fill="#3572A5"/>
-                    <rect mask="url(#languages-bar)" x="661.2492617198535" y="0" width="126.16743643453793" height="8" fill="#878787"/>
-                    <rect mask="url(#languages-bar)" x="787.4166981543914" y="0" width="76.61576049274927" height="8" fill="#89e051"/>
-                    <rect mask="url(#languages-bar)" x="864.0324586471407" y="0" width="38.171192950662714" height="8" fill="#4F5D95"/>
-                    <rect mask="url(#languages-bar)" x="902.2036515978035" y="0" width="9.19348625973521" height="8" fill="#384d54"/>
-                    <rect mask="url(#languages-bar)" x="911.3971378575386" y="0" width="8.602862142461472" height="8" fill="#012456"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="604.633092894258" height="8" fill="#3572A5"/>
+                    <rect mask="url(#languages-bar)" x="604.633092894258" y="0" width="152.6307250443972" height="8" fill="#89e051"/>
+                    <rect mask="url(#languages-bar)" x="757.2638179386552" y="0" width="95.01012182733697" height="8" fill="#878787"/>
+                    <rect mask="url(#languages-bar)" x="852.2739397659922" y="0" width="49.411180051595736" height="8" fill="#4F5D95"/>
+                    <rect mask="url(#languages-bar)" x="901.685119817588" y="0" width="18.31488018241214" height="8" fill="#384d54"/>
                 </svg>
                 <div class="field center horizontal-wrap fill-width">
-                    <div class="field center no-wrap language">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#f0c040" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-                        </svg>
-                        Smarty
-                    </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                             <path fill="#3572A5" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
@@ -49,15 +41,15 @@ h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
                     </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#878787" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-                        </svg>
-                        Hack
-                    </div>
-                    <div class="field center no-wrap language">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                             <path fill="#89e051" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                         </svg>
                         Shell
+                    </div>
+                    <div class="field center no-wrap language">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                            <path fill="#878787" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        Hack
                     </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -70,12 +62,6 @@ h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
                             <path fill="#384d54" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                         </svg>
                         Dockerfile
-                    </div>
-                    <div class="field center no-wrap language">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#012456" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-                        </svg>
-                        PowerShell
                     </div>
                 </div>
             </section>
