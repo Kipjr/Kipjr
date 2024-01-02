@@ -20,25 +20,18 @@ h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
             </section>
             <section class="column">
                 <h3 class="field">Recently used languages</h3>
-                <small>estimation from 35.9kb of code in 46 edited files across 31 commits over last 29 days</small>
+                <small>estimation from 8.50kb of code in 36 edited files across 18 commits over last 29 days</small>
                 <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="920" height="8">
                     <mask id="languages-bar">
                         <rect x="0" y="0" width="920" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="773.9267060172406" height="8" fill="#012456"/>
-                    <rect mask="url(#languages-bar)" x="773.9267060172406" y="0" width="76.37691621724913" height="8" fill="#878787"/>
-                    <rect mask="url(#languages-bar)" x="850.3036222344897" y="0" width="38.05172194148371" height="8" fill="#384d54"/>
-                    <rect mask="url(#languages-bar)" x="888.3553441759734" y="0" width="20.549492547454246" height="8" fill="#89e051"/>
-                    <rect mask="url(#languages-bar)" x="908.9048367234276" y="0" width="11.095163276572254" height="8" fill="#4F5D95"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="481.0377106178122" height="8" fill="#878787"/>
+                    <rect mask="url(#languages-bar)" x="481.0377106178122" y="0" width="239.657662476598" height="8" fill="#384d54"/>
+                    <rect mask="url(#languages-bar)" x="720.6953730944102" y="0" width="129.42497994116073" height="8" fill="#89e051"/>
+                    <rect mask="url(#languages-bar)" x="850.1203530355709" y="0" width="69.879646964429" height="8" fill="#4F5D95"/>
                 </svg>
                 <div class="field center horizontal-wrap fill-width">
-                    <div class="field center no-wrap language">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#012456" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-                        </svg>
-                        PowerShell
-                    </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                             <path fill="#878787" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
