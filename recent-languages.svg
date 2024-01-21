@@ -20,14 +20,14 @@ h2, h3 { margin: 0px; opacity: 0%; width: 0px; height: 0px; }
             </section>
             <section class="column">
                 <h3 class="field">Recently used languages</h3>
-                <small>estimation from 52.9kb of code in 61 edited files across 6 commits over last 8 days</small>
+                <small>estimation from 107kb of code in 129 edited files across 18 commits over last 9 days</small>
                 <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="920" height="8">
                     <mask id="languages-bar">
                         <rect x="0" y="0" width="920" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="473.69875714695684" height="8" fill="#4F5D95"/>
-                    <rect mask="url(#languages-bar)" x="473.69875714695684" y="0" width="446.30124285304316" height="8" fill="#878787"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="478.30238726790446" height="8" fill="#4F5D95"/>
+                    <rect mask="url(#languages-bar)" x="478.30238726790446" y="0" width="441.6976127320955" height="8" fill="#878787"/>
                 </svg>
                 <div class="field center horizontal-wrap fill-width">
                     <div class="field center no-wrap language">
