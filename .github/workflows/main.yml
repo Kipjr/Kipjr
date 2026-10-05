@@ -273,7 +273,7 @@ jobs:
           base_indepth: true
           repositories_skipped: kipjr/kipjr
 
-          plugin_languages: true  # Show language bar
+          plugin_languages: false  # Show language bar
           plugin_languages_sections: most-used
           plugin_languages_categories: data, markup, programming, prose  # All categories
           plugin_languages_details: bytes-size, percentage  # Show percentages, with 2 decimals of precision
