@@ -1,1 +1,1 @@
-[![Anurag's GitHub stats](https://github-stats-extended.vercel.app/api?username=kipjr)](https://github.com/stats-organization/github-stats-extended)
+[![GitHub Stats](https://github-stats-extended.vercel.app/api?username=Kipjr&hide_title=true&show_icons=true&disable_animations=true&theme=radical)](https://github-stats-extended.vercel.app/api?username=Kipjr&hide_title=true&show_icons=true&disable_animations=true&theme=radical)
