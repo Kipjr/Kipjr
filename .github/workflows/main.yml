@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Update stats.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -47,7 +47,7 @@ jobs:
 
       - name: Update stargazers.svg
         if: ${{ false }}
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           user: kipjr
           token: ${{ secrets.METRICS_TOKEN }}
@@ -67,7 +67,7 @@ jobs:
 
       - name: Update lines.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           user: kipjr
           token: ${{ secrets.METRICS_TOKEN }}
@@ -89,7 +89,7 @@ jobs:
 
       - name: Update notable.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -123,7 +123,7 @@ jobs:
 
       - name: Update habits.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -150,7 +150,7 @@ jobs:
 
       - name: Update isocalendar.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -174,7 +174,7 @@ jobs:
 
       - name: Update calendar.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -227,7 +227,7 @@ jobs:
 
       - name: Update followup.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -288,7 +288,7 @@ jobs:
 
       - name: Update recent-languages.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -322,7 +322,7 @@ jobs:
 
       - name: Update achievements.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -352,7 +352,7 @@ jobs:
 
       - name: Update stackoverflow.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -378,7 +378,7 @@ jobs:
 
       - name: Update reactions.svg
         if: always()
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
@@ -413,7 +413,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate JSON
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
@@ -472,7 +472,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update github-metrics.svg
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
@@ -529,7 +529,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update 'Insights' HTML
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
@@ -545,7 +545,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update README.md
-        uses: lowlighter/metrics@main
+        uses: lowlighter/metrics@latest
         with:
           # Common config
           user: kipjr
