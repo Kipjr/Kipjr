@@ -1,1 +1,2 @@
 [![GitHub Stats](https://github-stats-extended.vercel.app/api?username=Kipjr&hide_title=true&show_icons=true&disable_animations=true&theme=radical)](https://github-stats-extended.vercel.app/api?username=Kipjr&hide_title=true&show_icons=true&disable_animations=true&theme=radical)
+[![GitHub Stats](https://github-stats-extended.vercel.app/api/top-langs?username=Kipjr&langs_count=4&hide_values=true&disable_animations=true&theme=radical)](https://github-stats-extended.vercel.app/api/top-langs?username=Kipjr&langs_count=4&hide_values=true&disable_animations=true&theme=radical)
